@@ -1,6 +1,5 @@
 # JavaScript 数据结构与算法 + Leetcode 算法小练习
 
-|:---:|:---:|:---:|
 | # | 标题 | 源码 |
 |:---:|:---|---:|
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | [JavaScript](https://github.com/MarsGT/leetcode/blob/master/js/two-sum.js) |
@@ -23,3 +22,13 @@
 | 18 | [4Sum](https://leetcode.com/problems/4sum/) | **未实现** |
 | 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | **未实现** |
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | **未实现** |
+| 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | **未实现** |
+| 22 | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) | **未实现** |
+| 23 | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | **未实现** |
+| 24 | [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | **未实现** |
+| 25 | [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | **未实现** |
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | **未实现** |
+| 27 | [Remove Element](https://leetcode.com/problems/remove-element/) | **未实现** |
+| 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr/) | **未实现** |
+| 29 | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/) | **未实现** |
+| 30 | [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) | **未实现** |

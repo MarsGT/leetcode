@@ -1,8 +1,4 @@
-# Leetcode Solutions with JavaScript
-
-Update time: Tue Mar 07 2017 14:00:15 GMT+0800 (中国标准时间)
-
-I have solved **330 / 495** problems while **87** problems are still locked.
+#题库
 
 (Notes: :blue_book: means you need to buy a book from Leetcode)
 
