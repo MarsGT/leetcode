@@ -4,7 +4,7 @@
  */
 
 /**
- * - 列表的ADT表述
+ * - 列表类
  */
 function List() {
     this.listSize = 0; // 列表的元素个数
