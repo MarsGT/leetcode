@@ -44,15 +44,14 @@ ListNode.prototype = {
             prevNode.next = prevNode.next.next;
         }
     },
-    displayAll: function () {
+    outputArr: function () {
         var currNode = this.head;
-        var result = [
-        ];
+        var result = [];
         while (!(currNode.next == null)) {
             result.push(currNode.next.element);
             currNode = currNode.next;
         }
-        console.info(result.join(' -> '));
+        return result;
     },
     each: function (fn) {
         var currNode = this.head;
@@ -90,21 +89,6 @@ var addTwoNumbers = function (l1, l2) {
         cbit = r1[i] + r2[i] > 9 ? 1 : 0; // 最高值9+9也只有18，所以进位是1
         rList.insert(result[i], (i - 1 < 0 ? 'head' : result[i - 1]));
     }
-    rList.displayAll();
-    return rList;
+    
+    return rList.outputArr();
 };
-
-var l1 = new ListNode();
-l1.insert(2, 'head');
-l1.insert(4, 2);
-l1.insert(3, 4);
-
-var l2 = new ListNode();
-l2.insert(5, 'head');
-l2.insert(6, 5);
-l2.insert(4, 6);
-
-l1.displayAll();
-l2.displayAll();
-
-addTwoNumbers(l1, l2);
