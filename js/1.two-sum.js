@@ -5,15 +5,14 @@
  * @returns {number[]}
  */
 var twoSum = function (nums, target) {
-    nums.forEach(function (val, i) {
-        if (target > nums[i] || target == nums[i]) {
-            for (j = 0; j < lens; j++) {
-                if (j !== i) {
-                    if (target - nums[i] === nums[j]) {
-                        return [i, j];
-                    }
-                }
+    var lens = nums.length,
+        i, j;
+    
+    for (i = 0; i < lens; i++) {
+        for (j = i + 1; j < lens; j++) {
+            if (target - nums[i] === nums[j]) {
+                return [i, j];
             }
         }
-    });
+    };
 };
