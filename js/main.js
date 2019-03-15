@@ -35,23 +35,27 @@ describe('1.two-sum', function () {
 });
 
 describe('2.add-two-numbers', function () {
+    function ListNode(val) {
+        this.val = val;
+        this.next = null;
+    }
 
     it('in: (2 -> 4 -> 3) + (5 -> 6 -> 4)\tout: 7 -> 0 -> 8', function () {
-        var l1 = new ListNode(),
-            l2 = new ListNode(),
-            outArr = [7, 0, 8];
-        
-        l1.insert(2, 'head');
-        l1.insert(4, 2);
-        l1.insert(3, 4);
+        var l1 = new ListNode(2);
+        l1.next = new ListNode(4);
+        l1.next = new ListNode(3);
 
-        l2.insert(5, 'head');
-        l2.insert(6, 5);
-        l2.insert(4, 6);
+        var l1 = new ListNode(5);
+        l1.next = new ListNode(6);
+        l1.next = new ListNode(4);
+
+        var out = new ListNode(7);
+        out.next = new ListNode(0);
+        out.next = new ListNode(8);
 
         result = addTwoNumbers(l1, l2);
 
-        expect(result).toEqual(outArr);
+        expect(result).toEqual(out);
     });
 
 });
