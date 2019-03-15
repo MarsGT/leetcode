@@ -3,22 +3,30 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-    // FIXME:
-    var substring = s.charAt(i),
-        lens = s.length,
-        i, j;
+    var len = s.length,
+        reg = 0;
 
-    for (i = 1; i < lens; i++) {
-        j = substring.search(s.charAt(i+1));
-        if (j === -1) {
-            substring += s.charAt(i);
-        } else {
-            substring = substring.slice(j+1);
+    var checkStr = function (str, start, end) { // 检查已知字符串中，开始到结束的位置是否存在重复字符
+        var curStr = '',
+            cacheStr = '';
+        for (var i = start; i < end; i++) {
+            curStr = str[i];
+            if (cacheStr.search(curStr) == -1) {
+                cacheStr += curStr;
+            } else {
+                return true
+            }
+        }
+        return false;
+    }
+
+    for (var i = 0; i < len; i++) {
+        for (var j = i + 1; j <= len; j++) {
+            if (!checkStr(s, i, j)) {
+                reg = Math.max(reg, j - i);
+            }
         }
     }
 
-    console.log('result:' + substring);
-    return substring.length;
+    return reg;
 };
-
-lengthOfLongestSubstring("abcabcbb");
