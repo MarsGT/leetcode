@@ -2,9 +2,9 @@
 
 |序号|难度|原题|实现|
 |:---:|:---:|:---|---:|
-|1|易|[两数之和](https://leetcode-cn.com/problems/two-sum/)|[ClickThis](js/two-sum.js)|
-|2|中|[两数相加](https://leetcode-cn.com/problems/add-two-numbers/)|[ClickThis](js/add-two-numbers.js) |
-|3|中|[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)|[ClickThis](js/longest-substring-without-repeating-characters.js)|
+|1|易|[两数之和](https://leetcode-cn.com/problems/two-sum/)|[ClickThis](js/1.two-sum.js)|
+|2|中|[两数相加](https://leetcode-cn.com/problems/add-two-numbers/)|[ClickThis](js/2.add-two-numbers.js) |
+|3|中|[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)|[ClickThis](js/3.longest-substring-without-repeating-characters.js)|
 |4|难|[寻找两个有序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)|**未实现**|
 |5|中|[最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)|**未实现**|
 |6|中|[Z字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)|**未实现**|
