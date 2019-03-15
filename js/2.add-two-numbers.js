@@ -1,68 +1,10 @@
 /**
- * javascript链表实现(节点)
- * @typedef {object} Node
- */
-function Node(element) {
-    this.element = element;
-    this.next = null;
-}
-/**
- * javascript链表实现(主体)
- * @typedef {object} ListNode
- */
-function ListNode() {
-    this.head = new Node('head');
-};
-ListNode.prototype = {
-    find: function (item) {
-        var currNode = this.head;
-        while (currNode.element != item) {
-            currNode = currNode.next;
-        }
-        return currNode;
-    },
-    findPrev: function (item) {
-        var currNode = this.head;
-        while (!(currNode.next == null) && (currNode.next.element != item)) {
-            currNode = currNode.next;
-        }
-        return currNode;
-    },
-    findNext: function (item) {
-        var currNode = this.find(item);
-        return currNode.next;
-    },
-    insert: function (newElement, item) {
-        var newNode = new Node(newElement);
-        var currNode = this.find(item);
-        newNode.next = currNode.next;
-        currNode.next = newNode;
-    },
-    remove: function (item) {
-        var prevNode = this.findPrev(item);
-        if (!(prevNode.next == null)) {
-            prevNode.next = prevNode.next.next;
-        }
-    },
-    outputArr: function () {
-        var currNode = this.head;
-        var result = [];
-        while (!(currNode.next == null)) {
-            result.push(currNode.next.element);
-            currNode = currNode.next;
-        }
-        return result;
-    },
-    each: function (fn) {
-        var currNode = this.head;
-        while (!(currNode.next == null)) {
-            currNode = currNode.next;
-            fn(currNode.element);
-        }
-    }
-}
-
-/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ *
  * 给定两个多位数（链表），输出两个多位数之和(链表)
  * @example
  * {(2 -> 4 -> 3) + (5 -> 6 -> 4)} => {7 -> 0 -> 8}
@@ -71,24 +13,34 @@ ListNode.prototype = {
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-    var r1 = [],
-        r2 = [],
-        result = [],
-        rList = new ListNode(),
-        cbit = 0,//进位暂存
-        i;
-    l1.each(function (item) {
-        r1.push(item);
-    });
-    l2.each(function (item) {
-        r2.push(item);
-    });
-    var lens = r1.length;
-    for (i = 0; i < lens; i++) {
-        result.push(r1[i] + r2[i] > 9 ? 0 : r1[i] + r2[i] + cbit);
-        cbit = r1[i] + r2[i] > 9 ? 1 : 0; // 最高值9+9也只有18，所以进位是1
-        rList.insert(result[i], (i - 1 < 0 ? 'head' : result[i - 1]));
-    }
+    var i = l1,
+        j = l2,
+        rLN = new ListNode(0), // 存储输出结果
+        rCache = rLN, // 存储操作变量
+        si = 0,
+        cbit = 0; // 进位
     
-    return rList.outputArr();
+    if (i.val == 0 && !i.next) return j; // 某参数为[0]时直接返回
+    if (j.val == 0 && !j.next) return i;
+
+    do {
+        if (!i) i = new ListNode(0); // 两链表成员个数不对等时做补齐
+        if (!j) j = new ListNode(0);
+        si = i.val + j.val + cbit;
+        if (si > 9) {
+            cbit = Math.floor(si / 10);
+            si %= 10;
+        } else {
+            cbit = 0;
+        }
+        rCache.val = si;
+        if (i.next != null || j.next != null || cbit != 0) { // 最后判断是否存在进位
+            rCache.next = new ListNode(0);
+            rCache = rCache.next;
+        }
+        i = i.next;
+        j = j.next;
+    } while (i != null || j != null || cbit != 0)
+
+    return rLN;
 };
