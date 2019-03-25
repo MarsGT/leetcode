@@ -3,7 +3,7 @@ var jasmineEnv = jasmine.getEnv();
         random: false
     });
 
-describe('1.two-sum', function () {
+describe('1.两数之和', function () {
 
     it('in: [2, 7, 11, 15], 9\tout: [0, 1]', function () {
         var inArr = [2, 7, 11, 15],
@@ -34,7 +34,7 @@ describe('1.two-sum', function () {
 
 });
 
-describe('2.add-two-numbers', function () {
+describe('2.两数相加', function () {
     function ListNode(val) {
         this.val = val;
         this.next = null;
